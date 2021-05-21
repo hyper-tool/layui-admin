@@ -32,9 +32,9 @@ class Builder
 
     public $css
         = [
-            'layui'       => 'hyper-tool/vendor/layui-admin/layui/css/layui.css',
-            'fa-iconfont' => 'hyper-tool/vendor/layui-admin/font-awesome/css/font-awesome.min.css',
-            'admin'       => 'hyper-tool/vendor/layui-admin/css/admin.css',
+            'layui'       => 'vendor/layui-admin/layui/css/layui.css',
+            'fa-iconfont' => 'vendor/layui-admin/font-awesome/css/font-awesome.min.css',
+            'admin'       => 'vendor/layui-admin/css/admin.css',
         ];
 
     public $js
