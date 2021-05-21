@@ -26,13 +26,15 @@ class Icon
         $this->id = uniqid();
         $this->obj->module('iconPicker');
         $icon = Cache::remember('fa-iconfont_icons', function () {
-            $faFile = file_get_contents($this->obj->builder->css['fa-iconfont']);
-            preg_match_all('/.fa-(.*?):before/m', $faFile, $matches, PREG_PATTERN_ORDER, 3300);
+            $faFile = @file_get_contents($this->obj->builder->hyper_tool_css['fa-iconfont']);
             $icon = [];
-            foreach ($matches[1] as $val) {
-                $icon[] = 'fa-'.$val;
-            }
+            if ($faFile) {
+                preg_match_all('/.fa-(.*?):before/m', $faFile, $matches, PREG_PATTERN_ORDER, 3300);
+                foreach ($matches[1] as $val) {
+                    $icon[] = 'fa-'.$val;
+                }
 
+            }
             return $icon;
         });
         $data = json_encode(array_merge($this->data, $icon));

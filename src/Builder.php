@@ -37,6 +37,13 @@ class Builder
             'admin'       => 'vendor/layui-admin/css/admin.css',
         ];
 
+    public $hyper_tool_css
+        = [
+            'layui' => 'vendor/hyper-tool/layui-admin/layui/css/layui.css',
+            'fa-iconfont' => 'vendor/hyper-tool/layui-admin/font-awesome/css/font-awesome.min.css',
+            'admin' => 'vendor/hyper-tool/layui-admin/css/admin.css',
+        ];
+
     public $js
         = [
             'layui' => 'vendor/layui-admin/layui/layui.js',
@@ -60,6 +67,13 @@ class Builder
     final public function css($key, $css)
     {
         $this->css[$key] = $css;
+
+        return $this;
+    }
+
+    final public function hyper_tool_css($key, $css)
+    {
+        $this->hyper_tool_css[$key] = $css;
 
         return $this;
     }
